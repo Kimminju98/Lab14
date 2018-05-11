@@ -4,30 +4,30 @@ import java.util.Scanner;
 
 public class Powercalc {
 
-	private int n,p ;
+	private int n,p ; // n and p
 
-	public long power(int n,int p) throws Exception {
-		long result = (long) Math.pow(n,p);
-		if(n<0 || p <0) {
-			throw new Exception("n or p should not be negative");
+	public long power(int n,int p) throws Exception { // type of return is long and this method thorws Excpetion because of this method not has try 
+		long result = (long) Math.pow(n,p); // result is n to the power of the p
+		if(n<0 || p <0) { // if n or p is smaller than 0
+			throw new Exception("n or p should not be negative"); // make exception with string
 		}
-		if(n==0 && p ==0) {
-			throw new Exception("n and p should not be zero");
+		if(n==0 && p ==0) { // if n and p are 0
+			throw new Exception("n and p should not be zero"); // make exception with string
 		}
-		return result;
+		return result; // return result
 	}
 	public static void main(String[] args) {
-		Scanner mys = new Scanner(System.in);
-		Powercalc my_calculator = new Powercalc();
-		System.out.print("n :");
-		int n = mys.nextInt();
-		System.out.print("p :");
-		int p = mys.nextInt();
-		try {
-			System.out.println(my_calculator.power(n,p));
+		Scanner mys = new Scanner(System.in); // instantiate class of Scanner
+		Powercalc my_calculator = new Powercalc(); // instatntiate class of Powercalc
+		System.out.print("n :"); // print out string
+		int n = mys.nextInt(); // put user's value to n
+		System.out.print("p :"); // print out string
+		int p = mys.nextInt(); // put user's value to p
+		try { 
+			System.out.println(my_calculator.power(n,p)); // print out result of power method
 		}
 		catch(Exception e) {
-			System.out.println(e);
+			System.out.println(e); // print out system comment and line of problem
 		}
 	}
 

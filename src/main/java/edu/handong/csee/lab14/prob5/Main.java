@@ -6,19 +6,19 @@ public class Main {
 
 	public static void main(String[] args) {
 		try {
-			Scanner mys = new Scanner(System.in);
-			String str = mys.nextLine();
-			Main.myTest(str);
+			Scanner mys = new Scanner(System.in); // instantiate Scanner class
+			String str = mys.nextLine(); // put user's string type value to str
+			Main.test(str); // call test method
 		}
-		catch(MyException e) {
-			System.out.println("Inside catch block: "+e);
+		catch(MyException e) { // if MyException makes
+			System.out.println("Inside catch block: "+e); // print out Inside catch block: and problem string and line of problem
 		}
 	}
-	public static void myTest(String str) throws MyException{
-		if(str.equals("null")) {
-			throw new MyException("String val is null");
+	public static void test(String str) throws MyException{ // this method throws MyException
+		if(str.equals("null")) { // if str is null
+			throw new MyException("String val is null"); // make MyException with string
 		}
-		else
-			System.out.println("String val is: "+str);
+		else // else
+			System.out.println("String val is: "+str); // print out string
 	}
 }

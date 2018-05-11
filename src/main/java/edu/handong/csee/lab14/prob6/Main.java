@@ -6,16 +6,50 @@ public class Main {
 
 	public static void main(String[]args) {
 		Scanner mys = new Scanner(System.in);
-		System.out.print("Enter your name: ");
-		String name = mys.nextLine();
-		System.out.print("Enter your age: ");
-		int age = mys.nextInt();
-		System.out.print("Enter your race: ");
-		String race = mys.nextLine();
-		
-		try {
-			CustomID id = new CustomID(name,age,race);
+		String name;
+		int age, state;
+		String race;
+		CustomID myc = new CustomID();
+
+
+
+		while(true) {
+			try {
+				System.out.print("Enter your name: ");
+				name = mys.nextLine();
+				state=myc.custom_name(name);
+				if(state==0) break;
+			}
+			catch(Exception e) {
+				System.out.println(e.getMessage());
+			}   
 		}
-		
+		while(true) {
+			try {
+				System.out.print("Enter your age: ");
+				age = mys.nextInt();
+				mys.nextLine();
+				state=myc.custom_age(age);
+				if(state==0) break;
+			}
+			catch(Exception e) {
+				System.out.println(e.getMessage());
+			}   
+		}
+
+		while(true) {
+			try {
+				System.out.print("Enter your race: ");
+				race = mys.nextLine();
+				state=myc.custom_race(race);
+				System.out.println("Race is valid");
+				if(state==0) break;
+			}
+			catch(Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+
+
 	}
 }
