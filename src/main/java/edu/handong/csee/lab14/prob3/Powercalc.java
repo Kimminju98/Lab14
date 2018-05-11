@@ -19,15 +19,18 @@ public class Powercalc {
 	public static void main(String[] args) {
 		Scanner mys = new Scanner(System.in); // instantiate class of Scanner
 		Powercalc my_calculator = new Powercalc(); // instatntiate class of Powercalc
-		System.out.print("n :"); // print out string
-		int n = mys.nextInt(); // put user's value to n
-		System.out.print("p :"); // print out string
-		int p = mys.nextInt(); // put user's value to p
-		try { 
-			System.out.println(my_calculator.power(n,p)); // print out result of power method
-		}
-		catch(Exception e) {
-			System.out.println(e); // print out system comment and line of problem
+		while(true) { // repeat continually
+			try { 
+				System.out.print("n :"); // print out string
+				int n = mys.nextInt(); // put user's value to n
+				System.out.print("p :"); // print out string
+				int p = mys.nextInt(); // put user's value to p
+				System.out.println(my_calculator.power(n,p)); // print out result of power method
+				break; // if there is no exception, exit while statement
+			}
+			catch(Exception e) {
+				System.out.println(e); // print out system comment and line of problem
+			}
 		}
 	}
 
