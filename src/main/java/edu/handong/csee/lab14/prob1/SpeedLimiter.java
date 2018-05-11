@@ -5,18 +5,18 @@ import java.util.Scanner;
 
 public class SpeedLimiter {
 
-	private int limit;
-	private int speed;
-
-	public SpeedLimiter(int limit, int speed) {
-		this.limit = limit;
-		this.speed = speed;
+	private int limit; // limit of speed
+	private int speed; // speed
+ 
+	public SpeedLimiter(int limit, int speed) { // constructor that has two parameter
+		this.limit = limit; // limit of parameter is limit of member
+		this.speed = speed; // limit of speed is limit of member
 	}
 
 	public void warnSpeedLimit(){
 
 		try {
-			if(this.speed>this.limit) {
+			if(this.speed>this.limit) { // if speed is lager than limit
 				throw new Exception("Speed Limit " + this.limit + "Km exceeded!");
 			}
 			System.out.println("You are a law abiding citizen");
